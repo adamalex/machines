@@ -1,0 +1,35 @@
+{
+  "builders": [
+    {
+      "type": "digitalocean",
+      "image": "ubuntu-14-04-x64",
+      "snapshot_name": "dev-{{timestamp}}",
+      "ssh_username": "root",
+      "droplet_name": "dev-build",
+      "region": "nyc3",
+      "size": "512mb"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "file",
+      "source": "script",
+      "destination": "/root",
+      "pause_before": "30s"
+    },
+    {
+      "type": "file",
+      "source": "file",
+      "destination": "/root"
+    },
+    {
+      "type": "shell",
+      "script": "machine/dev"
+    },
+    {
+      "type": "file",
+      "source": "file/fig.upstart.conf",
+      "destination": "/etc/init/fig.conf"
+    }
+  ]
+}

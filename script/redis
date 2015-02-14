@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -eo pipefail
+
+echo "-----> Adding redis to fig.yml"
+
+cat file/redis.fig.yml >> /opt/fig/fig.yml

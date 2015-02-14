@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -eo pipefail
+
+echo "-----> Adding consul to fig.yml"
+
+cat file/consul.fig.yml >> /opt/fig/fig.yml

@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+set -eo pipefail
+
+echo "-----> Installing fig"
+
+apt-get install inotify-tools -y
+curl -L https://github.com/docker/fig/releases/download/1.0.1/fig-`uname -s`-`uname -m` > /usr/local/bin/fig
+chmod +x /usr/local/bin/fig
+mkdir /opt/fig
+
+if [[ $SUDO_USER == "vagrant" ]]; then 
+    echo "-----> Configuring fig for vagrant"
+
+    cp file/fig.upstart.conf /etc/init/fig.conf
+fi

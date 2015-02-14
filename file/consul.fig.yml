@@ -1,0 +1,7 @@
+consul:
+  image: progrium/consul:latest
+  command: -server -bootstrap -ui-dir /ui
+  ports:
+    - "8400:8400"
+    - "8500:8500"
+    - "8600:53/udp"

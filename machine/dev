@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+set -eo pipefail
+
+# Go to vagrant directory when running in vagrant
+if [[ $SUDO_USER == "vagrant" ]]; then cd /vagrant; fi
+
+echo
+echo "PROVISIONING DEV MACHINE"
+
+script/base
+script/docker
+script/fig
+#script/mysql
+script/elasticsearch
+script/redis
+#script/elk
+script/consul

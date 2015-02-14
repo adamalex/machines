@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+set -eo pipefail
+
+echo "-----> Authorizing default vagrant key for ssh"
+
+curl https://raw.githubusercontent.com/mitchellh/vagrant/master/keys/vagrant.pub >> ~vagrant/.ssh/authorized_keys

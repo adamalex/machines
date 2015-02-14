@@ -1,0 +1,35 @@
+{
+  "builders": [
+    {
+      "type": "digitalocean",
+      "image": "ubuntu-14-04-x64",
+      "snapshot_name": "dockerfig-{{timestamp}}",
+      "ssh_username": "root",
+      "droplet_name": "dockerfig-build",
+      "region": "nyc3",
+      "size": "512mb"
+    }
+  ],
+  "provisioners": [
+    {
+      "type": "file",
+      "source": "script",
+      "destination": "/root",
+      "pause_before": "30s"
+    },
+    {
+      "type": "file",
+      "source": "file",
+      "destination": "/root"
+    },
+    {
+      "type": "shell",
+      "script": "machine/dockerfig"
+    },
+    {
+      "type": "file",
+      "source": "file/fig.upstart.conf",
+      "destination": "/etc/init/fig.conf"
+    }
+  ]
+}

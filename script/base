@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+set -eo pipefail
+
+echo "-----> Upgrading os packages"
+
+apt-get update
+apt-get upgrade -y

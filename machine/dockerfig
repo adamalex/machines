@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -eo pipefail
+
+# Go to vagrant directory when running in vagrant
+if [[ $SUDO_USER == "vagrant" ]]; then cd /vagrant; fi
+
+echo
+echo "PROVISIONING DOCKERFIG MACHINE"
+
+script/base
+script/docker
+script/fig
