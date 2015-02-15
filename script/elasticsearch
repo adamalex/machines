@@ -3,4 +3,4 @@ set -eo pipefail
 
 echo "-----> Adding elasticsearch to fig.yml"
 
-cat file/elasticsearch.fig.yml >> /opt/fig/fig.yml
+sudo sh -c "cat file/elasticsearch.fig.yml >> /opt/fig/fig.yml"

@@ -3,5 +3,5 @@ set -eo pipefail
 
 echo "-----> Upgrading os packages"
 
-apt-get update
-apt-get upgrade -y
+sudo apt-get update
+sudo apt-get upgrade -y

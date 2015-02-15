@@ -1,6 +1,14 @@
 {
   "builders": [
     {
+      "type": "amazon-ebs",
+      "source_ami": "ami-02f8b16a",
+      "ami_name": "dev-{{timestamp}}",
+      "ssh_username": "ubuntu",
+      "region": "us-east-1",
+      "instance_type": "m3.medium"
+    },
+    {
       "type": "digitalocean",
       "image": "ubuntu-14-04-x64",
       "snapshot_name": "dev-{{timestamp}}",
@@ -14,22 +22,17 @@
     {
       "type": "file",
       "source": "script",
-      "destination": "/root",
+      "destination": ".",
       "pause_before": "30s"
     },
     {
       "type": "file",
       "source": "file",
-      "destination": "/root"
+      "destination": "."
     },
     {
       "type": "shell",
       "script": "machine/dev"
-    },
-    {
-      "type": "file",
-      "source": "file/fig.upstart.conf",
-      "destination": "/etc/init/fig.conf"
     }
   ]
 }
