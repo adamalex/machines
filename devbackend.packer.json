@@ -32,7 +32,7 @@
     },
     {
       "type": "shell",
-      "script": "machine/dev"
+      "script": "machine/devbackend"
     }
   ]
 }

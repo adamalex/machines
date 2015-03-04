@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -eo pipefail
 
-echo "-----> Adding redis to fig.yml"
+echo "-----> Adding redis to docker-compose.yml"
 
-sudo sh -c "cat file/redis.fig.yml >> /opt/fig/fig.yml"
+sudo sh -c "cat file/redis.compose.yml >> /opt/compose/docker-compose.yml"

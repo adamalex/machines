@@ -5,8 +5,13 @@ set -eo pipefail
 if [[ $SUDO_USER == "vagrant" ]]; then cd /vagrant; fi
 
 echo
-echo "PROVISIONING DOCKERFIG MACHINE"
+echo "PROVISIONING DEVBACKEND MACHINE"
 
 script/base
 script/docker
-script/fig
+script/compose
+#script/mysql
+script/elasticsearch
+script/redis
+#script/elk
+script/consul

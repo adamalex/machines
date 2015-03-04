@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 set -eo pipefail
 
-echo "-----> Adding elasticsearch to fig.yml"
+echo "-----> Adding elasticsearch to docker-compose.yml"
 
-sudo sh -c "cat file/elasticsearch.fig.yml >> /opt/fig/fig.yml"
+sudo sh -c "cat file/elasticsearch.compose.yml >> /opt/compose/docker-compose.yml"
