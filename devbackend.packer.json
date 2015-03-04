@@ -3,7 +3,7 @@
     {
       "type": "amazon-ebs",
       "source_ami": "ami-02f8b16a",
-      "ami_name": "dev-{{timestamp}}",
+      "ami_name": "devbackend-{{timestamp}}",
       "ssh_username": "ubuntu",
       "region": "us-east-1",
       "instance_type": "m3.medium"
@@ -11,9 +11,9 @@
     {
       "type": "digitalocean",
       "image": "ubuntu-14-04-x64",
-      "snapshot_name": "dev-{{timestamp}}",
+      "snapshot_name": "devbackend-{{timestamp}}",
       "ssh_username": "root",
-      "droplet_name": "dev-build",
+      "droplet_name": "devbackend-build",
       "region": "nyc3",
       "size": "512mb"
     }
