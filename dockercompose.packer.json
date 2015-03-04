@@ -7,15 +7,6 @@
       "ssh_username": "ubuntu",
       "region": "us-east-1",
       "instance_type": "m3.medium"
-    },
-    {
-      "type": "digitalocean",
-      "image": "ubuntu-14-04-x64",
-      "snapshot_name": "dockercompose-{{timestamp}}",
-      "ssh_username": "root",
-      "droplet_name": "dockercompose-build",
-      "region": "nyc3",
-      "size": "512mb"
     }
   ],
   "provisioners": [
